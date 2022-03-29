@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package questao1;
+
 import java.util.Scanner;
 /**
  *
  * @author 6962246
  */
-public class Questao1 {
+public class questao1 {
 
     /**
      * @param args the command line arguments
@@ -19,11 +19,11 @@ public class Questao1 {
         
         Scanner scanner=new Scanner(System.in);
         System.out.println("Digite os graus: ");
-        int valor = scanner.nextInt();
+        double valor = scanner.nextInt();
         
         //(0 °C × 9/5) + 32 = 32 °F
         
-        valor = valor*(9/5);
+        valor = valor*(1.8);
         valor = valor+32;
        
         
