@@ -17,7 +17,8 @@ public class questao3 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        double total=0;
+
         Scanner scanner=new Scanner(System.in);
         System.out.println("Informe nome do vendedor: ");
         String nome = scanner.next();
@@ -28,10 +29,20 @@ public class questao3 {
         System.out.println("Informe a quantidade vendas: ");
         double vendas = scanner.nextDouble();
 
-        
+        for(int i=0;i<vendas;i++){
+            System.out.println("Informe o valor da venda "+i+" :");
+            double valor_venda = scanner.nextDouble();
 
-        
-        System.out.println("Salario: ");
+            total = total + valor_venda;
+        }
+
+        total = (total*15)/100;
+        total = total+salario;
+
+        System.out.println("Nome do vendedor: "+nome);
+        System.out.println("Salario Fixo: "+salario);
+        System.out.println("Salario Final com comissões: "+total);
+
         
     }
     
