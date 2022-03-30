@@ -1,5 +1,3 @@
-package questao4;
-
 /*
 Faça um algoritmo em Java para calcular as notas finais de um aluno. 
 O usuário irá informar o nome do aluno, o nome da disciplina e a quantidade de notas para cada semestre (2 semestre). 
@@ -26,30 +24,44 @@ public class questao4 {
     
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        Nota[] notas = new Nota[6];
+        int quantidade_disciplinas=2;
 
-        for(int i=0;i<6;i++){
+        Nota[] notas = new Nota[quantidade_disciplinas];
 
         Scanner scanner=new Scanner(System.in);
         System.out.println("Informe nome do aluno: ");
         String nome = scanner.next();
 
+        for(int i=0;i<quantidade_disciplinas;i++){
+
         System.out.println("Informe nome da disciplina: ");
         String nome_disciplina = scanner.next();
 
-        System.out.println("Informe a nota para a disciplina: ");
-        double nota_disciplina = scanner.nextDouble();
+        System.out.println("Informe a nota para a disciplina (semestre 1): ");
+        double nota_semestre = scanner.nextDouble();
 
-        Nota nota = new Nota(nome,nome_disciplina,nota_disciplina);
+        System.out.println("Informe a nota para a disciplina (semestre 2): ");
+        double nota_semestre2 = scanner.nextDouble();
+
+        Nota nota = new Nota(nome,nome_disciplina,nota_semestre,nota_semestre2);
 
         notas[i]=nota;
+
         }
- 
-        System.out.println("Média Final: ");
+
+        double total = 0;
+        for(int i=0;i<quantidade_disciplinas;i++){
+            total = total + (notas[i].notas[i]+notas[i].notas[i]);
+        }
+
+        total = total/(quantidade_disciplinas*2);
+
+        if (total>=6){
+            System.out.println("APROVADO");
+        }else{
+            System.out.println("REPROVADO");
+        }
         
     }
-
-
 }
 
